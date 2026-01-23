@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon_clone</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav  class="z-10  fixed left-0 top-0 block md:hidden bg-[#232f3e] text-white w-full">
+        <div class="flex items-center justify-between px-2 py-1 gap-2">
+
+            <button id="mobileMenuBtnSm" class="p-2">
+                <i class="fa-solid fa-bars text-lg"></i>
+            </button>
+
+            <img src="../assets/logo/amazon_logo.png" height="32" width="85" class="h-8" alt="Amazon Logo">
+
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-semibold">Bhavik <i class="fa-solid fa-caret-down text-xs"></i></span>
+                <i class="fa-solid fa-cart-arrow-down text-xl"></i>
+            </div>
+        </div>
+
+
+        <div class="w-full px-2 pb-2">
+            <div class="flex rounded overflow-hidden shadow-sm bg-white">
+                <input class="flex-1 text-gray-800 py-2 px-2 text-sm outline-none bg-white" type="text"
+                    placeholder="Search Amazon.in" />
+                <button class="bg-[#febd69] px-4 flex items-center justify-center">
+                    <i class="fa-solid fa-search text-black text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="flex items-center px-2 text-xs pt-1 pb-2">
+            <span class="font-semibold mr-2">Shop By</span>
+            <a class="mr-4 hover:underline" href="#">Category</a>
+            <a class="mr-4 hover:underline" href="#">Deals</a>
+            <a class="hover:underline" href="#">Sell</a>
+        </div>
+
+
+        <div class="flex items-center bg-[#314257] px-2 py-2 text-xs">
+            <img src="../assets/logo/Location.svg" height="14" width="14" class="mr-2" alt="Location Icon" />
+            <span>Deliver to Bhavik - Rajkot 360005 <i class="fa-solid fa-caret-down text-[10px] ml-1"></i></span>
+        </div>
+    </nav>
+
+    <!-- mobile-nav-bar -->
+    <nav
+        class="z-10 fixed left-0 top-0 bg-black w-full justify-evenly text-sm items-center text-white h-15  hidden md:flex">
+
+        <button class="md:hidden absolute right-2 top-1/2 -translate-y-1/2 z-30 p-2 focus:outline-none">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+
+
+        <div class="text-left ">
+            <img src="../assets/logo/amazon_logo.png" height="50" width="120" alt="">
+        </div>
+
+
+        <div class="flex">
+            <img class="text-white" src="../assets/logo/Location.svg" height="40" width="40" alt="">
+            <div>
+                <p class="text-xs lg:text-sm">Delivering to Rajkot 360004</p>
+                <p class="text-xs lg:text-sm font-bold">update location</p>
+            </div>
+        </div>
+
+
+        <div class="flex">
+            <div class="sm:px-2 sm:py-1 bg-[#e6e6e6] rounded-l-lg flex items-center text-gray-500">
+                <span>All</span>
+                <select name="category" id="category">All</select>
+            </div>
+            <div class="bg-white text-gray-400">
+                <input class="py-3 px-2 1132xl:w-[30vw] md:w-[20vw] 1230xl:w-[40vw]" type="text"
+                    placeholder="Search Amazon.in">
+            </div>
+            <div class="bg-[#febd69] flex items-center px-2 py-1 rounded-r-lg">
+                <img src="../assets/logo/search.svg" height="35" width="35" alt="">
+            </div>
+        </div>
+
+
+        <div class="flex items-center gap-1">
+            <img class="" src="../assets/logo/icons8-india-48.png" height="30" width="30" alt="">
+            <span class="text-xs lg:text-sm font-bold">EN</span>
+            <select name="lang" id="lang"></select>
+        </div>
+
+
+        <div>
+            <p class="text-xs lg:text-sm">Hello, sign in</p>
+            <span class="text-xs lg:text-sm font-bold">Account & Lists</span>
+            <select name="lang" id="lang"></select>
+        </div>
+
+
+        <div class="hidden 1296xl:block">
+            <p class="text-sm">Return</p>
+            <p class="text-sm font-bold">& Orders</p>
+        </div>
+
+
+        <div class="flex items-center gap-1 text-white">
+            <i class="fa-solid fa-cart-arrow-down text-4xl"></i>
+            <span>Cart</span>
+        </div>
+    </nav>
+
+
+    <div id="mobileMenuSm" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden md:hidden flex-col">
+        <div class="w-72 bg-white h-full text-black flex flex-col p-4 relative">
+            <button id="closeMobileMenuSm" class="absolute right-2 top-2 text-2xl text-gray-500">
+                <i class="fa-solid fa-times"></i>
+            </button>
+
+            <div class="mb-4 border-b pb-2 flex items-center gap-2">
+                <img src="../assets/logo/amazon_logo.png" height="32" width="85" alt="Logo">
+                <span class="font-bold text-sm pl-2">Bhavik</span>
+            </div>
+
+            <a href="#" class="py-2 border-b text-sm font-semibold">Category</a>
+            <a href="#" class="py-2 border-b text-sm font-semibold">Deals</a>
+            <a href="#" class="py-2 border-b text-sm font-semibold">Sell</a>
+
+            <div class="flex items-center gap-2 py-3 border-b">
+                <img src="../assets/logo/Location.svg" height="14" width="14" alt="Location">
+                <span class="text-xs">Deliver to Bhavik - Rajkot 360005</span>
+            </div>
+
+            <div class="py-3 flex border-b gap-2 items-center">
+                <i class="fa-solid fa-cart-arrow-down text-2xl"></i>
+                <span class="font-semibold">Cart</span>
+            </div>
+        </div>
+        <div class="flex-1" id="closeAreaMobileSm"></div>
+    </div>
+    <!-- header  -->
+    <header
+        class=" hidden md:block bg-[#232f3e] md:flex flex-col md:flex-row w-full h-auto md:h-10 items-start md:items-center text-white px-2 mt-15 sm:px-4 justify-between md:justify-evenly">
+
+        <div class="flex items-center py-2 md:py-0 w-full md:w-auto">
+            <i class="fa-solid fa-bars"></i>
+            <span class="font-bold ml-1">All</span>
+        </div>
+
+        <div class="w-full md:w-auto overflow-x-auto">
+            <ul
+                class="flex flex-nowrap gap-2 sm:gap-4 md:gap-7 font-semibold text-xs sm:text-sm md:text-base py-1 md:py-0 whitespace-nowrap">
+                <li class="min-w-max">Fresh</li>
+                <li class="min-w-max">MX Player</li>
+                <li class="min-w-max">Sell</li>
+                <li class="min-w-max">Bestseller</li>
+                <li class="hidden 800xl:block min-w-max">Today's Deals</li>
+                <li class="hidden 886xl:block min-w-max">Mobiles</li>
+                <li class="hidden 1132xl:block min-w-max">Customer Service</li>
+                <li class="hidden 1230xl:block flex items-center min-w-max">Prime<select
+                        class="bg-[#232f3e] text-white border-none ml-1"></select></li>
+                <li class="hidden 1352xl:block min-w-max">New Release</li>
+                <li class="hidden 1562xl:block min-w-max">Amazon pay</li>
+                <li class="hidden 1642xl:block min-w-max">Fashion</li>
+                <li class="hidden 1746xl:block min-w-max">Electronics</li>
+                <li class="hidden 1892xl:block min-w-max">Home & Kitchen</li>
+                <li class="hidden 1970xl:block min-w-max">Books</li>
+            </ul>
+        </div>
+
+        <div
+            class="font-bold w-full md:w-auto text-xs sm:text-sm md:text-lg lg:text-2xl 2xl:text-3xl py-1 md:py-0 flex justify-start md:justify-end whitespace-nowrap mt-1 md:mt-0">
+            <span class="text-amber-500">Great</span>
+            <span class="mx-1">Republic Day</span>
+            <span class="text-green-400">Sale</span>
+            <span class="mx-1 hidden sm:inline">| Live Now</span>
+        </div>
+    </header>
+    <!-- main container  -->
+    <div class="bg-[#e3e6e6]  " >
+        <!-- hero-corousel  -->
+        <div class="hero-section md:mt-0 mt-38  xxl:mx-40  "id="top" >
+            <section>
+
+                <div class="z-6 carousel" data-carousel>
+                    <button class="carousel-button" data-carousel-btn="prev">
+                        &#10094;
+                    </button>
+                    <button class="carousel-button" data-carousel-btn="next">
+                        &#10095;
+                    </button>
+                    <ul data-carousel-slides>
+                        <li class="slide" data-carousel-slide data-active>
+                            <img src="../assets/images/1-hero-carousel/image_4.jpg" alt="image-1" />
+                            <div class="absolute bottom-0 left-0 w-full h-[60%]
+                                 bg-gradient-to-b from-transparent to-[#e3e6e6]"></div>
+
+                        </li>
+                        <li class="slide" data-carousel-slide>
+                            <img src="../assets/images/1-hero-carousel/image_5.jpg" alt="image-2" />
+                            <div class="absolute bottom-0 left-0 w-full h-[60%]
+                                 bg-gradient-to-b from-transparent to-[#e3e6e6]"></div>
+
+                        </li>
+                        <li class="slide" data-carousel-slide>
+                            <img src="../assets/images/1-hero-carousel/image_6.jpg" alt="image-3" />
+                            <div class="absolute bottom-0 left-0 w-full h-[60%]
+                                 bg-gradient-to-b from-transparent to-[#e3e6e6]"></div>
+
+                        </li>
+                        <li class="slide" data-carousel-slide>
+                            <img src="../assets/images/1-hero-carousel/image_7.jpg" alt="image-3" />
+                            <div class="absolute bottom-0 left-0 w-full h-[60%]
+                                 bg-gradient-to-b from-transparent to-[#e3e6e6]"></div>
+
+                        </li>
+                        <li class="slide" data-carousel-slide>
+                            <img src="../assets/images/1-hero-carousel/image_8.jpg" alt="image-3" />
+                            <div class="absolute bottom-0 left-0 w-full h-[60%]
+                                 bg-gradient-to-b from-transparent to-[#e3e6e6]"></div>
+
+                        </li>
+                        <li class="slide" data-carousel-slide>
+                            <img src="../assets/images/1-hero-carousel/image_9.jpg" alt="image-3" />
+                            <div class="absolute bottom-0 left-0 w-full h-[60%]
+                                 bg-gradient-to-b from-transparent to-[#e3e6e6]"></div>
+
+                        </li>
+                        <li class="slide" data-carousel-slide>
+                            <img src="../assets/images/1-hero-carousel/image_10.jpg" alt="image-3" />
+                            <div class="absolute bottom-0 left-0 w-full h-[60%]
+                                 bg-gradient-to-b from-transparent to-[#e3e6e6]"></div>
+
+                        </li>
+                        <li class="slide" data-carousel-slide>
+                            <img src="../assets/images/1-hero-carousel/image_11.jpg" alt="image-3" />
+                            <div class="absolute bottom-0 left-0 w-full h-[60%]
+                                 bg-gradient-to-b from-transparent to-[#e3e6e6]"></div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- cards-layout  -->
+        <div class="z-7 relative lg:-top-91 xxl:mx-44 mx-4 -top-86 xxl:-top-88  left-0 right-0">
+            <div class=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals picked just for you</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <div class="bg-white p-4 ">
+                    <h3 class="text-xl font-bold">Computers & Accessories recommendations for you</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_14.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_15.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_18.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_17.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <!-- <div  class="bg-white p-4 gap-4">
+                        <h3 class="text-xl font-bold">Up to 70% off | Truly wireless earbuds , headphones & more</h3>
+                        <div class=" gap-4">
+                            <div class="w-full">
+                                <img class="min-w-full min-h-full" src="../assets/images/2-product-card/image_16.jpg" alt="">
+                                <p class="text-sm">samsung | Starting 7,499</p>
+                            </div>
+                        
+                            <a href="#" class="text-md text-blue-500">See all offers</a>
+    
+                        </div>
+    
+                    </div> -->
+                <!-- <div  class="z-6 bg-white p-4 gap-4">
+                        <h3 class="text-xl font-bold">Deals related to items you've saved</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                                <p class="text-sm">samsung | Starting 7,499</p>
+                            </div>
+                            <div>
+                                <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                                <p class="text-sm">samsung | Starting 7,499</p>
+                            </div>
+                            <div>
+                                <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                                <p class="text-sm">samsung | Starting 7,499</p>
+                            </div>
+                            <div>
+                                <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                                <p class="text-sm">samsung | Starting 7,499</p>
+                            </div>
+                            <a href="#" class="text-md text-blue-500">See all offers</a>
+    
+                        </div>
+    
+                    </div> -->
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals related to items you've saved</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals related to items you've saved</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals related to items you've saved</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals related to items you've saved</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals related to items you've saved</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals related to items you've saved</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <div class="lg:hidden md:block hidden bg-white p-4 gap-4">
+                    <h3 class="text-xl font-bold">Up to 70% off | Truly wireless earbuds , headphones & more</h3>
+                    <div class=" gap-4">
+                        <div class="w-full h-full">
+                            <img class="min-w-full min-h-full" src="../assets/images/2-product-card/image_21.jpg"
+                                alt="">
+                            <p class="text-sm">samsung | Starting 7,499</p>
+                        </div>
+
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- mobile-carousel  -->
+            <div class="bg-white p-6 mt-5 ">
+                <div class="flex justify-between items-center mb-6 ">
+                    <h2 class="text-xl font-semibold">Up to 40% off | Best Deals on flagship smartphones</h2>
+                    <a class="text-[#007185]" href="#">Explore more</a>
+                </div>
+
+                <div class="relative ">
+                    <button
+                        class="absolute top-10 bg-white/70 text-xl  cursor-pointer py-4 px-4 mobile-carousel-left">&#10094;</button>
+                    <button
+                        class="absolute top-10 right-0  bg-white/70 text-xl  cursor-pointer py-4 px-4 mobile-carousel-right ">&#10095;</button>
+
+                    <div class="flex gap-5 overflow-auto scroll-smooth" id="mobileCarousel">
+
+
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_98.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_99.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_100.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_101.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_102.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_103.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_104.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_105.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_106.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_107.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="mobile-carousel">
+                                <img src="../assets/images/6-phones-carousel/image_108.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- pet-product-carousel  -->
+            <div class="bg-white p-6 mt-5 ">
+                <div class="flex justify-between items-center mb-6 ">
+                    <h2 class="text-xl font-semibold">Up to 70% off | Pet products</h2>
+                    <a class="text-[#007185]" href="#">Explore more</a>
+                </div>
+
+                <div class="relative ">
+                    <button
+                        class="absolute top-16 bg-white/70 text-xl  cursor-pointer py-4 px-4 pet-carousel-left">&#10094;</button>
+                    <button
+                        class="absolute top-16 right-0  bg-white/70 text-xl  cursor-pointer py-4 px-4 pet-carousel-right ">&#10095;</button>
+
+                    <div class="flex gap-5 overflow-auto scroll-smooth" id="petCorousel">
+
+
+                        <div class="text-center min-w-40 mb-5">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_34.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_35.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_36.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40 min-h-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_37.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_38.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_39.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_40.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_41.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_42.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_43.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_44.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_45.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_46.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_47.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_48.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_49.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_50.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_51.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_52.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_53.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_54.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_55.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_56.jpg">
+                            </div>
+                        </div>
+                        <div class="text-center min-w-40 ">
+                            <div class="pet-carousel">
+                                <img class="min-h-50" src="../assets/images/3-pet-product-carousel/image_57.jpg">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- four-card-layout  -->
+            <div class="mt-5 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals picked just for you</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <div class="bg-white p-4 ">
+                    <h3 class="text-xl font-bold">Computers & Accessories recommendations for you</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_14.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_15.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_18.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_17.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals related to items you've saved</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+
+                <div class="md:hidden lg:block  bg-white p-4 gap-4">
+                    <h3 class="text-xl font-bold">Up to 70% off | Truly wireless earbuds , headphones & more</h3>
+                    <div class=" gap-4">
+                        <div class="w-full h-full">
+                            <img class="min-w-full min-h-full" src="../assets/images/2-product-card/image_21.jpg"
+                                alt="">
+                            <p class="text-sm">samsung | Starting 7,499</p>
+                        </div>
+
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- corousel with video section -->
+            <div class=" bg-white mt-5">
+                <div class="flex justify-between items-center mb-6 px-4 pt-2">
+                    <h2 class="text-xl font-semibold">Shop Deals | Watch Livestreams</h2>
+                    <a class="text-[#007185]" href="#">See more from Amazon Live</a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="px-4 pb-4">
+                        <video class="" autoplay controls muted loop src="../assets/video/clip.mp4"> </video>
+                    </div>
+                    <div class="relative lg:col-span-2 px-2 pb-4">
+                        <button
+                            class="absolute top-25 bg-white/70 text-xl  cursor-pointer py-4 px-4 cooking-carousel-left">&#10094;</button>
+                        <button
+                            class="absolute top-25 right-0  bg-white/70 text-xl  cursor-pointer py-4 px-4 cooking-carousel-right ">&#10095;</button>
+
+                        <div class="flex gap-5 overflow-auto scroll-smooth" id="cookingCorousel">
+
+
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel  p-1">
+                                    <img src="../assets/images/tawa.webp">
+                                </div>
+                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <p>₹1,089
+                                    List price is₹1,795.00</p>
+                            </div>
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel  p-1">
+                                    <img src="../assets/images/cooker.jpg">
+                                </div>
+                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <p>₹1,282
+                                    List price is₹1,425.00</p>
+                            </div>
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel  p-1">
+                                    <img src="../assets/images/tawa.webp">
+                                </div>
+                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <p>₹1,089
+                                    List price is₹1,795.00</p>
+                            </div>
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel  p-1">
+                                    <img src="../assets/images/cooker.jpg">
+                                </div>
+                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <p>₹1,282
+                                    List price is₹1,425.00</p>
+                            </div>
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel p-1">
+                                    <img src="../assets/images/tawa.webp">
+                                </div>
+                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <p>₹1,089
+                                    List price is₹1,795.00</p>
+                            </div>
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel  p-1">
+                                    <img src="../assets/images/cooker.jpg">
+                                </div>
+                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <p>₹1,282
+                                    List price is₹1,425.00</p>
+                            </div>
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel  p-1">
+                                    <img src="../assets/images/tawa.webp">
+                                </div>
+                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <p>₹1,089
+                                    List price is₹1,795.00</p>
+                            </div>
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel  p-1">
+                                    <img src="../assets/images/cooker.jpg">
+                                </div>
+                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <p>₹1,282
+                                    List price is₹1,425.00</p>
+                            </div>
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel  p-1">
+                                    <img src="../assets/images/tawa.webp">
+                                </div>
+                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <p>₹1,089
+                                    List price is₹1,795.00</p>
+                            </div>
+                            <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
+                                <div class="cooking-carousel  p-1">
+                                    <img src="../assets/images/cooker.jpg">
+                                </div>
+                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <p>₹1,282
+                                    List price is₹1,425.00</p>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- single photo section  -->
+            <div class="bg-white w-full mt-5 flex items-center justify-center py-5">
+                <img class="object-contain" src="../assets/images/Dubai.jpg" alt="">
+            </div>
+
+            <!-- sponcered item section  -->
+            <div class="bg-white mt-5 p-4 lg:mx-40 flex justify-center items-center">
+                <div class=" flex items-center justify-center p-6">
+                    <img class="object-contain" src="../assets/images/laptop.avif" alt="">
+                </div>
+                <div>
+                    <h2 class="md:text-2xl font-bold">acer SmartChoice ALG, 13th Gen Intel Core i5-13420H, NVIDIA
+                        GeForce RTX 3050-6GB DDR6, 16GB RAM, 512GB SSD, FHD </h2>
+                    <p class="text-lg font-semibold">Rs. 59,999.00 only</p>
+                    <button class="bg-amber-500 text-black p-2 rounded-full hover:bg-amber-700 cursor-pointer ">Shop
+                        now</button>
+                </div>
+            </div>
+
+            <!-- last-card-section  -->
+            <div class="mt-5 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals picked just for you</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+                <div class="bg-white p-4 ">
+                    <h3 class="text-xl font-bold">Computers & Accessories recommendations for you</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_14.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_15.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_18.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_17.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+
+                <div class="bg-white p-4">
+                    <h3 class="text-xl font-bold">Deals related to items you've saved</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="../assets/images/2-product-card/image_13.jpg" alt="">
+                            <div class="grid grid-cols-2 p-1 gap-1">
+                                <span
+                                    class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                    off</span>
+                                <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                            </div>
+                        </div>
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+
+                <div class="md:hidden lg:block  bg-white p-4 gap-4">
+                    <h3 class="text-xl font-bold">Up to 70% off | Truly wireless earbuds , headphones & more</h3>
+                    <div class=" gap-4">
+                        <div class="w-full h-full">
+                            <img class="min-w-full min-h-full" src="../assets/images/2-product-card/image_21.jpg"
+                                alt="">
+                            <p class="text-sm">samsung | Starting 7,499</p>
+                        </div>
+
+                        <a href="#" class="text-md text-blue-500">See all offers</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+    <a href="#top" class="block -mt-16"> 
+        <div class="bg-[#37475a] text-white h-10 flex justify-center items-center hover:bg-[#4d5d70]">
+          <h2 class="text-lg">Back to top</h2>
+        </div>
+    </a>
+    <footer >
+        <div class="bg-[#232f3e] p-6  text-white text-center sm:text-left grid grid-cols-1 sm:grid-cols-4 lg:px-70 gap-10">
+            <div>
+                <h2 class="font-bold text-lg">get to know us</h2>
+                <ul>
+                    <li><a href="">About Amazon</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Press Releases</a></li>
+                    <li><a href="">Amazon Science</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg">Connect with Us</h2>
+                <ul>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Twitter</a></li>
+                    <li><a href="">Instagram</a></li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg">Make Money with Us</h2>
+                <ul>
+                    <li><a href="">Sell on Amazon</a></li>
+                    <li><a href="">Sell under Amazon Accelerator</a></li>
+                    <li><a href="">Protect and Build Your Brand</a></li>
+                    <li><a href="">Amazon Global Selling</a></li>
+                    <li><a href="">Supply to Amazon</a></li>
+                    <li><a href="">Become an Affiliate</a></li>
+                    <li><a href="">Fulfilment by Amazon</a></li>
+                    <li><a href="">Advertise Your Products</a></li>
+                    <li><a href="">Amazon Pay on Merchants</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg">Let Us Help You</h2>
+                <ul>
+                    <li><a href="">Your Account</a></li>
+                    <li><a href="">Returns Centre</a></li>
+                    <li><a href="">Recalls and Product Safety Alerts</a></li>
+                    <li><a href="">100% Purchase Protection</a></li>
+                    <li><a href="">Amazon App Download</a></li>
+                    <li><a href="">Help</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- <span class="w-full  border   "></span> -->
+        <div class="bg-[#232f3e] py-10 px-4 text-white flex justify-center items-center gap-2 md:gap-10">
+
+            <div><img height="100" width="100" src="../assets/logo/amazon_logo.png" alt=""></div>
+
+            <div class="border border-gray-300 rounded-sm px-4 py-1 flex justify-center items-center  gap-5">
+                <i>E</i>
+                <p>English</p>
+                <select name="" id=""></select>
+            </div>
+
+            <div class="border border-gray-300 rounded-sm px-4 py-1 flex justify-center items-center  gap-5">
+                <img height="25" width="25" src="../assets/logo/icons8-india-48.png" alt=""><span>India</span>
+            </div>
+
+        </div>
+
+        <div class="bg-[#131a22] p-6 text-[#999999]">
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:px-90 gap-10 text-sm">
+                <div>
+                    <h1 class="text-white ">AbeBooks</h1>
+                    <p>Books, art & collectibles</p>
+                </div>
+                <div>
+                    <h1 class="text-white ">Amazon Web Services</h1>
+                    <p>Scalable Cloud
+                        Computing Services</p>
+                </div>
+                <div>
+                    <h1 class="text-white ">Audible</h1>
+                   <p>Download
+                    Audio Books</p>
+                </div>
+                <div>
+                    <h1 class="text-white ">IMDb</h1>
+                   <p>Movies, TV & Celebrities</p>
+                </div>
+                <div>
+                    <h1 class="text-white ">Shopbop</h1>
+                   <p>Designer Fashion Brands</p>
+                </div>
+                <div>
+                    <h1 class="text-white ">Amazon Business</h1>
+                   <p>Everything For Your Business</p>
+                </div>
+                <div>
+                    <h1 class="text-white ">Amazon Prime Music</h1>
+                   <p>100 million songs, ad-free Over 15 million podcast episodes</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bg-[#131a22] p-6 text-white text-sm flex justify-center items-center">
+            <div>
+                <div class="flex gap-4">
+                    <p>Conditions of Use & Sale</p>
+                    <p>Privacy Notice</p>
+                    <p>Interest-Based Ads</p>
+                </div>
+                <div class="flex justify-center">
+                    <p>&copy; 1996-2026, Amazon.com,Inc. or its affiliates</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    </footer>
+
+
+
+</body>
+
+</html>
