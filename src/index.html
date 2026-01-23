@@ -12,7 +12,7 @@
     <script defer src="./script.js"></script>
 </head>
 
-<body>
+<body class="bg-[#e3e6e6] min-h-screen flex flex-col">
     <!-- mobile-nav -->
     <nav  class="z-10  fixed left-0 top-0 block md:hidden bg-[#232f3e] text-white w-full">
         <div class="flex items-center justify-between px-2 py-1 gap-2">
@@ -21,9 +21,9 @@
                 <i class="fa-solid fa-bars text-lg"></i>
             </button>
 
-            <img src="../assets/logo/amazon_logo.png" height="32" width="85" class="h-8" alt="Amazon Logo">
+            <img src="../assets/logo/amazon_white_logo.png" height="40" width="85" class="h-8 mt-2" alt="Amazon Logo">
 
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 ">
                 <span class="text-xs font-semibold">Bhavik <i class="fa-solid fa-caret-down text-xs"></i></span>
                 <i class="fa-solid fa-cart-arrow-down text-xl"></i>
             </div>
@@ -64,12 +64,12 @@
         </button>
 
 
-        <div class="text-left ">
-            <img src="../assets/logo/amazon_logo.png" height="50" width="120" alt="">
+        <div class=" border border-black hover:border hover:border-gray-100 rounded-sm">
+            <img src="../assets/logo/amazon_logo.png" height="10" width="100" alt="">
         </div>
 
 
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center items-center border border-black hover:border hover:border-gray-100 rounded-sm p-2">
             <i class="fa-solid fa-location-dot fa-2xl"></i>
             <div>
                 <p class="text-xs lg:text-sm">Delivering to Rajkot 360004</p>
@@ -93,42 +93,42 @@
         </div>
 
 
-        <div class="flex items-center gap-1">
+        <div class="flex items-center gap-1 border border-black hover:border hover:border-gray-100 rounded-sm p-2">
             <img class="" src="../assets/logo/icons8-india-48.png" height="30" width="30" alt="">
             <span class="text-xs lg:text-sm font-bold">EN</span>
             <select name="lang" id="lang"></select>
         </div>
 
 
-        <div>
+        <div class="border border-black hover:border hover:border-gray-100 rounded-sm p-2"> 
             <p class="text-xs lg:text-sm">Hello, sign in</p>
             <span class="text-xs lg:text-sm font-bold">Account & Lists</span>
             <select name="lang" id="lang"></select>
         </div>
 
 
-        <div class="hidden 1296xl:block">
+        <div class="hidden 1296xl:block border  border-black hover:border hover:border-gray-100 rounded-sm p-2">
             <p class="text-sm">Return</p>
             <p class="text-sm font-bold">& Orders</p>
         </div>
 
 
-        <div class="flex items-center gap-1 text-white">
+        <div class="flex items-center gap-1 text-white border border-black hover:border hover:border-gray-100 rounded-sm p-2">
             <i class="fa-solid fa-cart-arrow-down text-4xl"></i>
             <span>Cart</span>
         </div>
     </nav>
 
 
-    <div id="mobileMenuSm" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden md:hidden flex-col">
+    <div id="mobileMenuSm" class="fixed inset-0 bg-black/30 bg-opacity-50 z-50 hidden md:hidden flex-col">
         <div class="w-72 bg-white h-full text-black flex flex-col p-4 relative">
             <button id="closeMobileMenuSm" class="absolute right-2 top-2 text-2xl text-gray-500">
                 <i class="fa-solid fa-times"></i>
             </button>
 
             <div class="mb-4 border-b pb-2 flex items-center gap-2">
-                <img src="../assets/logo/amazon_logo.png" height="32" width="85" alt="Logo">
-                <span class="font-bold text-sm pl-2">Bhavik</span>
+                <img src="../assets/logo/Amazon_logo.svg" height="32" width="85" alt="Logo">
+                <span class="font-bold text-sm pl-2 mt-15">Bhavik</span>
             </div>
 
             <a href="#" class="py-2 border-b text-sm font-semibold">Category</a>
@@ -149,31 +149,31 @@
     </div>
     <!-- header  -->
     <header
-        class=" hidden md:block bg-[#232f3e] md:flex flex-col md:flex-row w-full h-auto md:h-10 items-start md:items-center text-white px-2 mt-15 sm:px-4 justify-between md:justify-evenly">
+        class=" hidden md:block bg-[#232f3e] md:flex flex-col md:flex-row w-full h-11 md:h-12 items-start md:items-center text-white mt-15  justify-between md:justify-evenly">
 
-        <div class="flex items-center py-2 md:py-0 w-full md:w-auto">
+        <div class="flex items-center p-4  md:py-0 w-full md:w-auto border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm ">
             <i class="fa-solid fa-bars"></i>
             <span class="font-bold ml-1">All</span>
         </div>
 
-        <div class="w-full md:w-auto overflow-x-auto">
+        <div class="w-full md:w-auto overflow-hidden">
             <ul
-                class="flex flex-nowrap gap-2 sm:gap-4 md:gap-7 font-semibold text-xs sm:text-sm md:text-base py-1 md:py-0 whitespace-nowrap">
-                <li class="min-w-max">Fresh</li>
-                <li class="min-w-max">MX Player</li>
-                <li class="min-w-max">Sell</li>
-                <li class="min-w-max">Bestseller</li>
-                <li class="hidden 800xl:block min-w-max">Today's Deals</li>
-                <li class="hidden 886xl:block min-w-max">Mobiles</li>
-                <li class="hidden 1132xl:block min-w-max">Customer Service</li>
-                <li class="hidden 1230xl:block flex items-center min-w-max">Prime<select
-                        class="bg-[#232f3e] text-white border-none ml-1"></select></li>
-                <li class="hidden 1352xl:block min-w-max">New Release</li>
-                <li class="hidden 1562xl:block min-w-max">Amazon pay</li>
-                <li class="hidden 1642xl:block min-w-max">Fashion</li>
-                <li class="hidden 1746xl:block min-w-max">Electronics</li>
-                <li class="hidden 1892xl:block min-w-max">Home & Kitchen</li>
-                <li class="hidden 1970xl:block min-w-max">Books</li>
+                class="flex flex-nowrap gap-2 sm:gap-4 md:gap-5 font-semibold text-xs sm:text-sm md:text-base py-1 md:py-0 whitespace-nowrap">
+                <li class="min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Fresh</li>
+                <li class="min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">MX Player</li>
+                <li class="min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Sell</li>
+                <li class="min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Bestseller</li>
+                <li class="hidden 800xl:block min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Today's Deals</li>
+                <li class="hidden 886xl:block min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Mobiles</li>
+                <li class="hidden 1132xl:block min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Customer Service</li>
+                <li class="hidden 1230xl:block flex items-center min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Prime<select
+                        class="bg-[#232f3e] text-white border-none ml-1 border border-[#232f3e] hover:border hover:border-gray-100 "></select></li>
+                <li class="hidden 1352xl:block min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">New Release</li>
+                <li class="hidden 1562xl:block min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Amazon pay</li>
+                <li class="hidden 1642xl:block min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Fashion</li>
+                <li class="hidden 1746xl:block min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Electronics</li>
+                <li class="hidden 1892xl:block min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Home & Kitchen</li>
+                <li class="hidden 1970xl:block min-w-max border border-[#232f3e] hover:border hover:border-gray-100 rounded-sm p-1">Books</li>
             </ul>
         </div>
 
@@ -186,9 +186,10 @@
         </div>
     </header>
     <!-- main container  -->
-    <div class="bg-[#e3e6e6]  " >
+
+    <div class="flex-1 " >
         <!-- hero-corousel  -->
-        <div class="hero-section md:mt-0 mt-38  xxl:mx-40  "id="top" >
+        <div class="hero-section md:mt-0 mt-38  xxl:mx-40   " id="top" >
             <section>
 
                 <div class="z-6 carousel" data-carousel>
@@ -254,9 +255,8 @@
             </section>
 
         </div>
-
         <!-- cards-layout  -->
-        <div class="z-7 relative lg:-top-91 xxl:mx-44 mx-4 -top-86 xxl:-top-88  left-0 right-0">
+        <div class="z-7 xxl:mx-44 mx-4 relative -mt-80 sm:-mt-84 md:-mt-80 lg:-mt-88">
             <div class=" grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
                 <div class="bg-white p-4">
                     <h3 class="text-xl font-bold">Deals picked just for you</h3>
@@ -1023,81 +1023,131 @@
                                 <div class="cooking-carousel  p-1">
                                     <img src="../assets/images/tawa.webp">
                                 </div>
-                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
-                                <p>₹1,089
-                                    List price is₹1,795.00</p>
+                                <p class="text-sm text-left font-semibold" >SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
                             <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
                                 <div class="cooking-carousel  p-1">
                                     <img src="../assets/images/cooker.jpg">
                                 </div>
-                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
-                                <p>₹1,282
-                                    List price is₹1,425.00</p>
+                                <p class="text-sm text-left font-semibold">Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
                             <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
                                 <div class="cooking-carousel  p-1">
                                     <img src="../assets/images/tawa.webp">
                                 </div>
-                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
-                                <p>₹1,089
-                                    List price is₹1,795.00</p>
+                                <p class="text-sm text-left font-semibold">SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
                             <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
                                 <div class="cooking-carousel  p-1">
                                     <img src="../assets/images/cooker.jpg">
                                 </div>
-                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
-                                <p>₹1,282
-                                    List price is₹1,425.00</p>
+                                <p class="text-sm text-left font-semibold">Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
                             <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
                                 <div class="cooking-carousel p-1">
                                     <img src="../assets/images/tawa.webp">
                                 </div>
-                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
-                                <p>₹1,089
-                                    List price is₹1,795.00</p>
+                                <p class="text-sm text-left font-semibold">SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
                             <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
                                 <div class="cooking-carousel  p-1">
                                     <img src="../assets/images/cooker.jpg">
                                 </div>
-                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
-                                <p>₹1,282
-                                    List price is₹1,425.00</p>
+                                <p class="text-sm text-left font-semibold">Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
                             <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
                                 <div class="cooking-carousel  p-1">
                                     <img src="../assets/images/tawa.webp">
                                 </div>
-                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
-                                <p>₹1,089
-                                    List price is₹1,795.00</p>
+                                <p class="text-sm text-left font-semibold">SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
                             <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
                                 <div class="cooking-carousel  p-1">
                                     <img src="../assets/images/cooker.jpg">
                                 </div>
-                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
-                                <p>₹1,282
-                                    List price is₹1,425.00</p>
+                                <p class="text-sm text-left font-semibold">Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
                             <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
                                 <div class="cooking-carousel  p-1">
                                     <img src="../assets/images/tawa.webp">
                                 </div>
-                                <p>SOLARA Crownstone Premium Cast Iron Tawa </p>
-                                <p>₹1,089
-                                    List price is₹1,795.00</p>
+                                <p class="text-sm text-left font-semibold">SOLARA Crownstone Premium Cast Iron Tawa </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
                             <div class="text-center min-w-40 border border-gray-300 p-1 rounded-lg">
                                 <div class="cooking-carousel  p-1">
                                     <img src="../assets/images/cooker.jpg">
                                 </div>
-                                <p>Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
-                                <p>₹1,282
-                                    List price is₹1,425.00</p>
+                                <p class="text-sm text-left font-semibold">Hawkins Futura 2 Litre Cook n Serve Bowl, Hard Anodised Saucepan </p>
+                                <div class="grid grid-cols-2 p-1 gap-1">
+                                    <span
+                                        class="bg-red-700 rounded flex m-1  items-center justify-center  text-white  text-xs ">60%
+                                        off</span>
+                                    <span class="text-red-700 text-xs font-bold">Republic Day Deal</span>
+                                </div>
+                                <p class="text-left">₹1,089 <span class="line-through text-sm text-gray-400" >₹1,795.00</span></p>
                             </div>
 
                         </div>
@@ -1121,9 +1171,10 @@
                 <div>
                     <h2 class="md:text-2xl font-bold">acer SmartChoice ALG, 13th Gen Intel Core i5-13420H, NVIDIA
                         GeForce RTX 3050-6GB DDR6, 16GB RAM, 512GB SSD, FHD </h2>
-                    <p class="text-lg font-semibold">Rs. 59,999.00 only</p>
-                    <button class="bg-amber-500 text-black p-2 rounded-full hover:bg-amber-700 cursor-pointer ">Shop
-                        now</button>
+
+                        <p class="bg-red-700 text-white font-semibold w-28  text-xs p-2 ">Limited time deal</p>
+                    <p class="text-lg font-semibold">Rs. 59,999.00 only <span class="line-through text-sm text-gray-400" >Rs 99,999.00</span></p>
+                    <button class="bg-amber-500 text-white text-sm p-2 rounded-full hover:bg-amber-700 cursor-pointer ">Shop now</button>
                 </div>
             </div>
 
@@ -1279,67 +1330,62 @@
                 </div>
 
             </div>
-
-
-
-
-
-
         </div>
 
-    </div>
-    <a href="#top" class="block -mt-16"> 
+          <a href="#top" class="block mt-5"> 
         <div class="bg-[#37475a] text-white h-10 flex justify-center items-center hover:bg-[#4d5d70]">
           <h2 class="text-lg">Back to top</h2>
         </div>
     </a>
-    <footer>
+    </div>
+  
+    <footer >
         <div class="bg-[#232f3e] p-6  text-white text-center sm:text-left grid grid-cols-1 sm:grid-cols-4 lg:px-70 gap-10">
             <div>
-                <h2 class="font-bold text-lg">get to know us</h2>
+                <h2 class="font-bold text-lg">Get to know us</h2>
                 <ul>
-                    <li><a href="">About Amazon</a></li>
-                    <li><a href="">Careers</a></li>
-                    <li><a href="">Press Releases</a></li>
-                    <li><a href="">Amazon Science</a></li>
-                </ul>
+                    <li class="hover:underline"><a href="">About Amazon</a></li>
+                    <li class="hover:underline"><a href="">Careers</a></li>
+                    <li class="hover:underline"><a href="">Press Releases</a></li>
+                    <li class="hover:underline"><a href="">Amazon Science</a></li>
+                </ul>   
             </div>
             <div>
                 <h2 class="font-bold text-lg">Connect with Us</h2>
                 <ul>
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="">Twitter</a></li>
-                    <li><a href="">Instagram</a></li>
+                    <li class="hover:underline"><a href="">Facebook</a></li>
+                    <li class="hover:underline"><a href="">Twitter</a></li>
+                    <li class="hover:underline"><a href="">Instagram</a></li>
                     
                 </ul>
             </div>
             <div>
                 <h2 class="font-bold text-lg">Make Money with Us</h2>
                 <ul>
-                    <li><a href="">Sell on Amazon</a></li>
-                    <li><a href="">Sell under Amazon Accelerator</a></li>
-                    <li><a href="">Protect and Build Your Brand</a></li>
-                    <li><a href="">Amazon Global Selling</a></li>
-                    <li><a href="">Supply to Amazon</a></li>
-                    <li><a href="">Become an Affiliate</a></li>
-                    <li><a href="">Fulfilment by Amazon</a></li>
-                    <li><a href="">Advertise Your Products</a></li>
-                    <li><a href="">Amazon Pay on Merchants</a></li>
+                    <li class="hover:underline"><a href="">Sell on Amazon</a></li>
+                    <li class="hover:underline"><a href="">Sell under Amazon Accelerator</a></li>
+                    <li class="hover:underline"><a href="">Protect and Build Your Brand</a></li>
+                    <li class="hover:underline"><a href="">Amazon Global Selling</a></li>
+                    <li class="hover:underline"><a href="">Supply to Amazon</a></li>
+                    <li class="hover:underline"><a href="">Become an Affiliate</a></li>
+                    <li class="hover:underline"><a href="">Fulfilment by Amazon</a></li>
+                    <li class="hover:underline"><a href="">Advertise Your Products</a></li>
+                    <li class="hover:underline"><a href="">Amazon Pay on Merchants</a></li>
                 </ul>
             </div>
             <div>
                 <h2 class="font-bold text-lg">Let Us Help You</h2>
                 <ul>
-                    <li><a href="">Your Account</a></li>
-                    <li><a href="">Returns Centre</a></li>
-                    <li><a href="">Recalls and Product Safety Alerts</a></li>
-                    <li><a href="">100% Purchase Protection</a></li>
-                    <li><a href="">Amazon App Download</a></li>
-                    <li><a href="">Help</a></li>
+                    <li class="hover:underline"><a href="">Your Account</a></li>
+                    <li class="hover:underline"><a href="">Returns Centre</a></li>
+                    <li class="hover:underline"><a href="">Recalls and Product Safety Alerts</a></li>
+                    <li class="hover:underline"><a href="">100% Purchase Protection</a></li>
+                    <li class="hover:underline"><a href="">Amazon App Download</a></li>
+                    <li class="hover:underline"><a href="">Help</a></li>
                 </ul>
             </div>
         </div>
-        <!-- <span class="w-full  border   "></span> -->
+        <div class="w-full border-t border-gray-400 opacity-50  "></div>
         <div class="bg-[#232f3e] py-10 px-4 text-white flex justify-center items-center gap-2 md:gap-10">
 
             <div><img height="100" width="100" src="../assets/logo/amazon_logo.png" alt=""></div>
@@ -1358,33 +1404,33 @@
 
         <div class="bg-[#131a22] p-6 text-[#999999]">
             <div class="grid grid-cols-2 sm:grid-cols-4 lg:px-90 gap-10 text-sm">
-                <div>
+                <div class="hover:underline">
                     <h1 class="text-white ">AbeBooks</h1>
                     <p>Books, art & collectibles</p>
                 </div>
-                <div>
+                <div class="hover:underline">
                     <h1 class="text-white ">Amazon Web Services</h1>
                     <p>Scalable Cloud
                         Computing Services</p>
                 </div>
-                <div>
+                <div class="hover:underline">
                     <h1 class="text-white ">Audible</h1>
                    <p>Download
                     Audio Books</p>
                 </div>
-                <div>
+                <div class="hover:underline">
                     <h1 class="text-white ">IMDb</h1>
                    <p>Movies, TV & Celebrities</p>
                 </div>
-                <div>
+                <div class="hover:underline">
                     <h1 class="text-white ">Shopbop</h1>
                    <p>Designer Fashion Brands</p>
                 </div>
-                <div>
+                <div class="hover:underline">
                     <h1 class="text-white ">Amazon Business</h1>
                    <p>Everything For Your Business</p>
                 </div>
-                <div>
+                <div class="hover:underline">
                     <h1 class="text-white ">Amazon Prime Music</h1>
                    <p>100 million songs, ad-free Over 15 million podcast episodes</p>
                 </div>
@@ -1406,9 +1452,7 @@
 
         </div>
     </footer>
-
-
-
+  
 </body>
 
 </html>
