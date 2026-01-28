@@ -1248,14 +1248,44 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="mt-5 w-full bg-white p-4">
+       <section class="bg-white p-4 relative">
+            <div class="flex justify-between items-center mb-4">
+              <h2 class="text-lg font-semibold">
+                Inspired by your browsing history
+              </h2>
+              <div class="flex items-center gap-3 text-sm">
+                <span id="pageIndicator" class="text-gray-600"></span>
+                <button
+                  id="startOverBtn"
+                  class="hidden text-blue-600 hover:underline font-medium">
+                  Start over
+                </button>
+              </div>
+            </div>
+          
+            <button id="prevBtn"
+              class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-300 w-10 h-10 flex items-center justify-center shadow disabled:opacity-40">
+              &#10094;
+            </button>
+          
+            <button id="nextBtn"
+              class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-300 w-10 h-10 flex items-center justify-center shadow disabled:opacity-40">
+              &#10095;
+            </button>
+            <div id="carousel"
+              class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-4 px-10">
+            </div>
+          </section>
+    </div>
+
+    <footer>
         <a href="#top" class="block mt-5">
             <div class="bg-[#37475a] text-white h-10 flex justify-center items-center hover:bg-[#4d5d70]">
                 <h2 class="text-lg">Back to top</h2>
             </div>
         </a>
-    </div>
-
-    <footer>
         <div class="footer-links">
             <div>
                 <h2 class="font-bold text-lg">Get to know us</h2>
